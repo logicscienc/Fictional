@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aos": "^2.3.4",
     "framer-motion": "^12.23.22",
     "motion": "^12.23.22",
     "react": "^18.2.0",
     "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.6.0",
     "react-scripts": "^5.0.1",
+    "react-star-ratings": "^2.3.0",
+    "react-stars": "^2.2.5",
     "react-useanimations": "^2.10.0",
     "web-vitals": "^2.1.4"
   },

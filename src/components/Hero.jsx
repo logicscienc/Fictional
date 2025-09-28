@@ -8,8 +8,15 @@ import step from "../images/animation/step.png";
 import corner from "../images/animation/corner.png";
 import GlassButton from "../common/GlassButton"
 import reading from "../images/reading.png";
+import toast from "react-hot-toast";
 
 const Hero = () => {
+
+   const handleButtonClick = () => {
+    toast.loading("Features are loading...", {
+      duration: 2000,
+    });
+  }
   const firstWordRef = useRef(null);
   const [cornerPos, setCornerPos] = useState({ top: 0, left: 0 });
 
@@ -28,6 +35,10 @@ const Hero = () => {
       });
     }
   }, []);
+   
+  
+ 
+  
 
   const heading = [
     { type: "text", content: "Step " }, // first word wrapped with ref
@@ -57,7 +68,7 @@ const Hero = () => {
   };
 
   return (
-   <section className="relative w-full bg-white ">
+   <section  id="hero" className="relative w-full bg-white ">
   <div className="relative w-full min-h-[85vh] flex flex-col md:flex-row items-center justify-center px-4 md:px-8 mt-12 sm:mt-16 md:mt-0">
     
 
@@ -137,7 +148,7 @@ const Hero = () => {
 
       {/* Button */}
       <div className="flex justify-center md:justify-start">
-        <GlassButton text="Get Started" onClick={() => alert("Clicked!")} />
+        <GlassButton text="Explore Features"  onClick={handleButtonClick} />
       </div>
     </motion.div>
 

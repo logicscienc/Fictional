@@ -18,21 +18,31 @@ const Navbar = () => {
     document.body.style.overflow = isOpen ? "hidden" : "";
   }, [isOpen]);
 
-  const menuItems = [
-    { label: "Courses", icon: <BookOpenTextIcon size={24} /> },
-    { label: "About", icon: <InfoIcon size={24} /> },
-    { label: "Contact", icon: <PhoneIcon size={24} /> },
-  ];
+ const menuItems = [
+//   { label: "Home", icon: <HouseIcon size={24} />, id: "hero" },
+  { label: "Features", icon: <BookOpenTextIcon size={24} />, id: "features" },
+  { label: "Testimonials", icon: <InfoIcon size={24} />, id: "testimonials" },
+  { label: "Contact", icon: <PhoneIcon size={24} />, id: "footer" },
+];
+
+
+  const scrollToSection = (id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#382b3f] text-white z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <HouseIcon size={32} />
-            <span className="font-bold text-xl">IELTS Academy</span>
-          </div>
+          <div id="home" className="flex items-center gap-2">
+  <HouseIcon size={32} />
+  <span className="font-bold text-xl">IELTS Academy</span>
+</div>
+
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex items-center gap-8">
@@ -40,6 +50,9 @@ const Navbar = () => {
               <li
                 key={idx}
                 className="flex flex-col items-center group cursor-pointer"
+                onClick={() => scrollToSection(item.id)}
+                 data-aos="fade-down"
+      data-aos-delay={idx * 200} 
               >
                 <div className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 group-hover:shadow-[0_0_20px_#c8a8db]">
                   {React.cloneElement(item.icon, {
@@ -65,6 +78,7 @@ const Navbar = () => {
                 animation={menu2}
                 size={40}
                 strokeColor="white"
+                autoplay loop
                 reverse={isOpen}
               />
             </button>
@@ -75,30 +89,36 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.ul
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden absolute top-full left-0 w-full flex flex-col gap-4 px-4 pb-4 bg-[#382b3f]/90 shadow-lg backdrop-blur-sm"
-          >
-            {menuItems.map((item, idx) => (
-              <li
-                key={idx}
-                className="flex flex-col items-center group cursor-pointer"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 group-hover:shadow-[0_0_20px_#c8a8db]">
-                  {React.cloneElement(item.icon, {
-                    className:
-                      "transition-colors duration-300 group-hover:text-[#c8a8db]",
-                  })}
-                </div>
-                <span className="mt-2 text-sm group-hover:text-[#c8a8db] transition-colors">
-                  {item.label}
-                </span>
-              </li>
-            ))}
-          </motion.ul>
+          
+<motion.ul
+  initial={{ scaleY: 0, opacity: 0, transformOrigin: "top" }}
+  animate={{ scaleY: 1, opacity: 1 }}
+  exit={{ scaleY: 0, opacity: 0 }}
+  transition={{ duration: 0.3, ease: "easeInOut" }}
+  className="md:hidden absolute top-full left-0 w-full flex flex-col gap-4 px-4 pb-4 bg-[#382b3f]/90 shadow-lg backdrop-blur-sm z-50 pointer-events-auto"
+>
+  {menuItems.map((item, idx) => (
+    <li
+      key={idx}
+      className="flex flex-col items-center group cursor-pointer"
+      onClick={() => {
+        scrollToSection(item.id);
+        setIsOpen(false);
+      }}
+      data-aos="fade-down"
+      data-aos-delay={idx * 200}
+    >
+      <div className="flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300 group-hover:shadow-[0_0_20px_#c8a8db]">
+        {React.cloneElement(item.icon, {
+          className: "transition-colors duration-300 group-hover:text-[#c8a8db]",
+        })}
+      </div>
+      <span className="mt-2 text-sm group-hover:text-[#c8a8db] transition-colors">
+        {item.label}
+      </span>
+    </li>
+  ))}
+</motion.ul>
         )}
       </AnimatePresence>
     </nav>
