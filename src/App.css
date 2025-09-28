@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+ html, body {
     @apply font-sans min-h-screen overflow-x-hidden relative;
   }
 }
