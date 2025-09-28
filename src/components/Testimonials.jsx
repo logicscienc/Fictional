@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect}from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import StarRatings from "react-star-ratings";
 import man1 from "../images/man1.jpg"
@@ -43,6 +44,13 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const containerRef = useRef(null);
+const [totalWidth, setTotalWidth] = useState(0);
+
+useEffect(() => {
+  setTotalWidth(containerRef.current.scrollWidth);
+}, []);
+
   return (
     <section id="testimonials" className="relative py-20 bg-white overflow-hidden">
       {/* Section Title */}
@@ -54,7 +62,8 @@ const Testimonials = () => {
       <div className="relative w-full overflow-hidden">
         <motion.div
           className="flex gap-8"
-          animate={{ x: ["0%", "-50%"] }} 
+          ref={containerRef}
+           animate={{ x: ["0px", `-${totalWidth / 2}px`] }} 
           transition={{
             duration: 10,
             repeat: Infinity,
