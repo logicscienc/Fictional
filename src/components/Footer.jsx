@@ -9,9 +9,11 @@ import women from "../images/women.gif";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="bg-[#382b3f] text-white pt-16 pb-8 relative overflow-hidden">
+    <footer
+      id="footer"
+      className="bg-[#382b3f] text-white pt-16 pb-8 relative overflow-hidden"
+    >
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
-        
         {/* ====== Logo & About Section ====== */}
         <div>
           <div className="flex items-center gap-3 mb-4">
@@ -36,11 +38,22 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-3 text-gray-300 text-sm">
-            <li className="hover:text-white transition duration-200 cursor-pointer">Home</li>
-            <li className="hover:text-white transition duration-200 cursor-pointer">Features</li>
-            <li className="hover:text-white transition duration-200 cursor-pointer">Testimonials</li>
-            <li className="hover:text-white transition duration-200 cursor-pointer">Courses</li>
-            <li className="hover:text-white transition duration-200 cursor-pointer">Contact Us</li>
+            <li className="hover:text-white transition duration-200 cursor-pointer">
+              
+              Home
+            </li>
+            <li className="hover:text-white transition duration-200 cursor-pointer">
+              Features
+            </li>
+            <li className="hover:text-white transition duration-200 cursor-pointer">
+              Testimonials
+            </li>
+            <li className="hover:text-white transition duration-200 cursor-pointer">
+              Courses
+            </li>
+            <li className="hover:text-white transition duration-200 cursor-pointer">
+              Contact Us
+            </li>
           </ul>
         </div>
 
@@ -49,7 +62,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
           <ul className="space-y-3 text-gray-300 text-sm">
             <li>Email: support@ieltspro.com</li>
-            <li>Phone: +91 98765 43210</li>
+            <li>Phone: +91 9000000000</li>
             <li>Address: 123 IELTS Lane, Delhi, India</li>
           </ul>
         </div>
@@ -58,20 +71,70 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex gap-6">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-               <UseAnimations animation={github} size={40} strokeColor="white" autoplay loop />
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <UseAnimations
+                animation={github}
+                size={40}
+                strokeColor="white"
+                autoplay
+                loop
+              />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <UseAnimations animation={twitter} size={40} strokeColor="white" autoplay loop/>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <UseAnimations
+                animation={twitter}
+                size={40}
+                strokeColor="white"
+                autoplay
+                loop
+              />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <UseAnimations animation={facebook} size={40} strokeColor="white" autoplay loop/>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <UseAnimations
+                animation={facebook}
+                size={40}
+                strokeColor="white"
+                autoplay
+                loop
+              />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <UseAnimations animation={linkedin} size={40} strokeColor="white" autoplay loop/>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <UseAnimations
+                animation={linkedin}
+                size={40}
+                strokeColor="white"
+                autoplay
+                loop
+              />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <UseAnimations animation={instagram} size={40} strokeColor="white" autoplay loop/>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <UseAnimations
+                animation={instagram}
+                size={40}
+                strokeColor="white"
+                autoplay
+                loop
+              />
             </a>
           </div>
         </div>
@@ -90,4 +153,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
