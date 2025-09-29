@@ -42,7 +42,7 @@ Check out the live deployed version of this project:
 ![Mobile View](src/asserts/cellphoneview.png)
 
 ### **Footer Animation Video**
-[Watch Footer Animation](https://github.com/logicscienc/Fictional/blob/main/src/asserts/footer.mp4)
+[Watch Footer Animation](src/asserts/footer.mp4)
 
 ---
 
